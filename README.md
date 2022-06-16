@@ -118,7 +118,7 @@ _출처 : 8차 인체치수조사 (2020~21), 사이즈코리아_
    즉, 잔차는 위에서 언급한 _에러값_ 이며 _에러값_ 이 최소라는 뜻은 잔차의 합이 가장 적은 경우임을 이용하여 회귀식 $y=ax+b$를 구한다.  
    그러나, 잔차는 항상 양$(+)$의 부호를 가져야 하므로 **잔차의 제곱의 합** 이 최소인 경우를 알고리즘에 적용해야 한다.
 
-    <p align="left"><img src="" height="550px" width="950px"></p>
+    <p align="center"><img src="https://github.com/donggyunhuh/Regression_Algorithm/blob/main/graph2nd.png?raw=true" height="400px" width="550px"></p>
   <br/>
 
 # 유전 알고리즘에 적용
