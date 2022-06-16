@@ -80,5 +80,5 @@ _출처 : 8차 인체치수조사 (2020~21), 사이즈코리아_
 
 > 종속변수 : **발 사이즈**
 
-<p align="center"><img src="" height="300px" width="500px"></p>
+<p align="center"><img src="https://github.com/donggyunhuh/Regression_Algorithm/blob/main/graphFirst.png?raw=true" height="400px" width="550px"></p>
 <br/>
