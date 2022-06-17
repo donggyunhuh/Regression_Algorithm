@@ -183,4 +183,73 @@ public interface Problem {
 }
 ```
 
-### 2. SA구현
+### 2. import 값 설정
+
+```java
+import java.util.ArrayList;
+import java.util.Random;
+```
+
+Random, ArrayList 라이브러리 패키지 import
+
+### 3. SA구현
+
+1. 배열 선언, solve 메소드 선언
+
+```java
+public class SimulatedAnnealing {
+    private int count; // 반복수
+    public ArrayList<Double> hist; //hist 배열 선언
+
+    public SimulatedAnnealing(int count) {
+        this.count = count;
+        hist = new ArrayList<>();
+    }
+
+    public double solve(Problem p, double t, double a, double lower, double upper) {
+      // solve 메소드 선언
+        Random r = new Random(); // r에 랜덤 인수넣기
+        double x0 = r.nextDouble() * (upper - lower) + lower; //
+        return solve(p, t, a, x0, lower, upper);
+    }
+```
+
+- 최적해 도달하기 까지 적합도값을 hist 배열을 선언한 후 저장한다
+- 만약 solve메소드에 초기 후보해를 인수로 전달해 주지 않을 경우, 임의로 지정한 후 초기 후보해를 넣어 오버로딩한 solve메소드를 호출한다.
+
+2. solve 메소드 구현, isNeighborBetter 메소드 구현
+
+```java
+public double solve(Problem p, double t, double a, double x0, double lower, double upper) {
+        Random r = new Random();
+        double f0 = p.fit(x0);
+        hist.add(f0);
+        if (a >= 1) {
+            a = 0.99;
+        } //T는 갈수록 0에 가까워져야하므로 냉각률이 1이상일 경우 0.99로 설정해준다.
+        for (int i = 0; i < count; i++) {
+            int kt = (int) t; //온도 t에서의 for루프 반복 횟수 kt
+            for (int j = 0; j < kt; j++) {
+                double x1 = r.nextDouble() * (upper - lower) + lower; //이웃해 선택
+                double f1 = p.fit(x1);
+
+                if (p.isNeighborBetter(f0, f1)) {
+                    x0 = x1;
+                    f0 = f1; //이웃해의 적합도> 현재해의 적합도 -> 이웃해 선택
+                    hist.add(f0);
+                } else { //현재해의 적합도 > 이웃해의 적합도
+                    double d = Math.abs(f1 - f0);
+                    double p0 = Math.exp(-d / t);
+                    if (r.nextDouble() < p0) { //좋지 않은 이웃해를 선택할 확률인 p0는 t(온도)에 반비례하고 d(현재 후보해와 이웃해의 차이)와 비례
+                        x0 = x1;
+                        f0 = f1; //현재 후보해의 적합도가 더 높더라도 자유롭게 탐색할 확률에 따라 좋지 않은 이웃해를 선택
+                        hist.add(f0);
+                    }
+                }
+            }
+            t *= a;
+        }
+        return x0;
+    }
+}
+```
