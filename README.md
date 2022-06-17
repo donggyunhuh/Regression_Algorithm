@@ -81,7 +81,7 @@ _출처 : 8차 인체치수조사 (2020~21), 사이즈코리아_
 
 > 종속변수 : **발 사이즈**
 
-<p align="left"><img src="https://github.com/donggyunhuh/Regression_Algorithm/blob/main/graphFirst.png?raw=true" height="400px" width="550px"></p>
+<p align="center"><img src="https://github.com/donggyunhuh/Regression_Algorithm/blob/main/graphFirst.png?raw=true" height="400px" width="550px"></p>
 <br/>
 
 위 그래프는 엑셀을 이용하여 데이터의 분포를 나타낸 것이다.
