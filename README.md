@@ -318,5 +318,7 @@ public class Main {
 
 # 알고리즘 수행결과
 
-<p align="center"><img src="" height="300px" width="500px"></p>
+<p align="center"><img src="https://github.com/donggyunhuh/Regression_Algorithm/blob/main/result.png?raw=true" height="300px" width="500px"></p>
 <br/>
+
+- 알고리즘에서 구한 값은 $0.4950$으로
