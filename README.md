@@ -342,4 +342,4 @@ _개발 환경 : jdk-17기반 on-line 컴파일러 reple.it 사용, windows 11_
 
 측정하여 표로 나타내었다.
 
- <p align="center"><img src=""></p>
+ <p align="center"><img src="https://github.com/donggyunhuh/Regression_Algorithm/blob/main/errorFrequency.png?raw=true"></p>
