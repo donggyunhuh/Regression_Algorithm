@@ -109,6 +109,10 @@ _출처 : 8차 인체치수조사 (2020~21), 사이즈코리아_
 
 이 레포트에서는 위 회귀식을 찾아내기 위해 최적화 알고리즘 '**모의 담금질 알고리즘**' 을 사용한다.
 
+위 데이터를 {}좌표 형태로 나타내보면
+
+{1657, 229.2}, {1672, 249.1}, {1578, 233.2}, {1573, 226.4}, {1648, 233.8}, {1591, 234.5}, {1681, 249.4}, {1550, 218.9}, {1630, 249.6}, {1619, 234.5}, {1524, 217.6}, {1631, 238.5}, {1630, 235.3}, {1654, 242.2}, {1580, 231.4}, {1602, 228.1}, {1625, 225.8}, {1664, 237.9}, {1591, 216.7}, {1670, 246.5}, {1653, 239.9}, {1665, 238.2}, {1616, 219.4}, {1659, 236.4}, {1583, 218.7}, {1758, 247.9} 로 나타낼 수 있다.
+
 ### 회귀식 구하기(추가설명)
 
 - 회귀식을 구하는 방법
@@ -250,6 +254,60 @@ public double solve(Problem p, double t, double a, double x0, double lower, doub
             t *= a;
         }
         return x0;
+    }
+}
+```
+
+3. 선형 모델 데이터의 가장 적합한 파라미터를 찾기 위한 main 구현
+
+```java
+public class Main {
+    public static void main(String[] args) {
+        SimulatedAnnealing sa = new SimulatedAnnealing(1000);
+        int[][] data = {{1, 10119}, {2, 11642}, {3, 9437}, {4, 9529}, {5, 45199}, {6, 11367}, {7, 14365}, {8, 24906}, {9, 32231}, {10, 31935}, {11, 33510}};
+
+        Problem p1 = new Problem() {
+            @Override
+            public double fit(double x) {
+                double sum = 0;
+                for (int i = 0; i < data.length; i++) {
+                    int xv = data[i][0];
+                    sum += Math.pow(x * xv - data[i][1], 2);
+                }
+                return sum / data.length;
+            }
+
+            @Override
+            public boolean isNeighborBetter(double f0, double f1) {
+                return f0 > f1;
+            } //작은값선택
+        };
+        double a = sa.solve(p1, 100, 0.99, 2000, 2000, 5000);
+        System.out.println("\ny=ax 선형 모델에 가장 적합한 파라미터");
+        System.out.println("a : " + a);
+        System.out.println("데이터와의 차이값 : " + p1.fit(a));
+
+        Problem p2 = new Problem() {
+            @Override
+            public double fit(double x) {
+                double sum = 0;
+                for (int i = 0; i < data.length; i++) {
+                    int xv = data[i][0];
+                    sum += Math.pow((a * xv + x) - data[i][1], 2);
+                }
+                return sum / data.length;
+            }
+
+            @Override
+            public boolean isNeighborBetter(double f0, double f1) {
+                return f0 > f1;
+            } //작은값선택
+        };
+        double b = sa.solve(p2, 100, 0.99, 2000, 2000, 5000);
+        System.out.println("\ny=ax+b 선형 모델에 가장 적합한 파라미터");
+        System.out.println("a : " + a);
+        System.out.println("b : " + b);
+        System.out.println("데이터와의 차이값 : " + p2.fit(b));
     }
 }
 ```
