@@ -94,7 +94,7 @@ _출처 : 8차 인체치수조사 (2020~21), 사이즈코리아_
 
 엑셀의 회귀 분석 기능으로 위 데이터에 회귀식을 나타내면
 
-<p align="center"><img src="https://github.com/donggyunhuh/Regression_Algorithm/blob/main/graphRegr.png?raw=true" height="300px" width="500px"></p>
+<p align="center"><img src="https://github.com/donggyunhuh/Regression_Algorithm/blob/main/graphRegr.png?raw=true" height="400px" width="550px"></p>
 <br/>
 
 회귀식은 $y = 0.1595x - 25.768$ 으로 구해진다.
@@ -103,7 +103,7 @@ _출처 : 8차 인체치수조사 (2020~21), 사이즈코리아_
 
 아래는 엑셀로 회귀 데이터분석을 실행한 결과이다.
 
-<p align="center"><img src="" height="300px" width="500px"></p>
+<p align="center"><img src="https://github.com/donggyunhuh/Regression_Algorithm/blob/main/RegressionAnalysis.png?raw=true" height="400px" width="550px"></p>
 
 이 레포트에서는 위 회귀식을 찾아내기 위해 최적화 알고리즘 '**유전 알고리즘**' 을 사용한다.
 
