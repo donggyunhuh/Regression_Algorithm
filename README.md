@@ -12,6 +12,8 @@
 
 그래프, 그림자료는 직접 제작하려 노력했다.
 
+소스코드는 다른 개발자(_rinrin-ye_)의 코드를 참고하였다.
+
 ## 목차
 
 1. 회귀(Regression)의 의미
@@ -326,6 +328,8 @@ _개발 환경 : jdk-17기반 on-line 컴파일러 reple.it 사용, windows 11_
 - 알고리즘에서 구한 $a$ 값은 $0.1506$ 으로 엑셀을 이용하여 구한
   $0.1595$ 와 매우 근접한 결과를 얻어낼 수 있었다.
 
+- _count_=1000000일때의 1회 수행값이다
+
 구한 두 회귀식을 그래프를 그려서 비교하면
 
 <p align="center"><img src="https://github.com/donggyunhuh/Regression_Algorithm/blob/main/Graph/graph1and2compare.png?raw=true"></p>
@@ -334,7 +338,7 @@ _개발 환경 : jdk-17기반 on-line 컴파일러 reple.it 사용, windows 11_
 
 # 알고리즘 분석
 
-탐색 수인 $count$ 값을 증가시킬때마다 알고리즘의 에러 발생 경향이 감소한다.
+**탐색 수인 $count$ 값을 증가시킬때마다 알고리즘의 에러 발생 경향이 감소한다.**
 
 - $count$를 100회, 1000회, 1000회, 10000회로 늘려가며 에러 발생 빈도를 측정했다.
 
@@ -343,3 +347,8 @@ _개발 환경 : jdk-17기반 on-line 컴파일러 reple.it 사용, windows 11_
 측정하여 표로 나타내었다.
 
  <p align="center"><img src="https://github.com/donggyunhuh/Regression_Algorithm/blob/main/Graph/errorFrequency.png?raw=true"></p>
+
+# 출처 및 참고문헌
+
+- github **_rinrin-ye_**
+- wikipedia **'담금질\_기법'**
