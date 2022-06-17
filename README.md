@@ -124,7 +124,7 @@ _출처 : 8차 인체치수조사 (2020~21), 사이즈코리아_
   회귀선을 구하기 위해 회귀선을 $y=ax+b$, $y=f(x)$ 라고 가정한다.  
    구한 데이터 값 중에서 임의로 한 데이터 값을 좌표의 형태로 나타낸다.  
    예를 들어, 아래 그래프에서 $(1657,229.2)$ 점과 회귀선 $f(x)=ax+b$ 사이의 거리는 $f(1650) - 229.2$ 이다. 이를 통계학 용어로 잔차라 한다.  
-   즉, 잔차는 위에서 언급한 _에러값_ 이며 _에러값_ 이 최소라는 뜻은 잔차의 합이 가장 적은 경우임을 이용하여 회귀식 $y=ax+b$를 구한다.  
+   즉, 잔차는 위에서 언급한 **_에러값_** 이며 에러값이 최소라는 뜻은 잔차의 합이 가장 적은 경우임을 이용하여 회귀식 $y=ax+b$를 구한다.  
    그러나, 잔차는 항상 양$(+)$의 부호를 가져야 하므로 **잔차의 제곱의 합** 이 최소인 경우를 알고리즘에 적용해야 한다.
 
     <p align="center"><img src="https://github.com/donggyunhuh/Regression_Algorithm/blob/main/graph2nd.png?raw=true" height="400px" width="550px"></p>
@@ -318,7 +318,14 @@ public class Main {
 
 # 알고리즘 수행결과
 
-<p align="center"><img src="https://github.com/donggyunhuh/Regression_Algorithm/blob/main/result.png?raw=true" height="300px" width="500px"></p>
+<p align="center"><img src="https://github.com/donggyunhuh/Regression_Algorithm/blob/main/resultFinal.jpg?raw=true" height="300px" width="500px"></p>
 <br/>
 
-- 알고리즘에서 구한 값은 $0.4950$으로
+_개발 환경 : jdk-17기반 on-line 컴파일러 reple.it 사용, windows 11_
+
+- 알고리즘에서 구한 $a$ 값은 $0.1506$ 으로 엑셀을 이용하여 구한
+  $0.1595$ 와 매우 근접한 결과를 얻어낼 수 있었다.
+
+* 구한 두 회귀식 그래프를 그려서 비교해보자
+
+<p align="center"><img src=""></p>
