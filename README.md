@@ -10,7 +10,7 @@
 
 내가 이해한 내용을 바탕으로최대한 회귀, 모의 담금질 알고리즘에 대해 누구나 이해할 수 있도록 설명하려 노력했다.
 
-그래프, 그림자료는 직접 제작하였다.
+그래프, 그림자료는 직접 제작하려 노력했다.
 
 ## 목차
 
@@ -140,24 +140,47 @@ _출처 : 8차 인체치수조사 (2020~21), 사이즈코리아_
 
 ```java
   begin
-Get an initial solution S; //  초기값을 설정한다.
-Get an initial temperature T>0; // 초기 온도값을 설정한다.
-while not yet "frozen" do  // 최적의 경우를 찾을 때까지 즉 온도가 완전히 내려 갈때까지 프로그램을 반복한다.
+Get an initial solution S; //  초기값을 설정
+Get an initial temperature T>0; // 초기 온도값을 설정
+while not yet "frozen" do  // 온도가 0이 될때까지 반복, 최적해찾을
 
-   for 1<= i <= P do       // P=nk 즉 Step의 사이즈가 되고 k는 주어진 종류를 n은 우리가 결정하게 된다. 즉 STEP사이즈를 결정하게 된다.
+   for 1<= i <= P do       // P=nk 즉  STEP사이즈를 결정
 
-   Pick a random neighbor S' of S; // 임의로 선택한 솔루션 S' 과 기존의 솔루션 S를 선택한다.
+   Pick a random neighbor S' of S; // 임의의 솔루션 S' 과 기존의 솔루션 S를 선택
 
-   ? ← cost(S')-cost(S); // 기존의 솔루션과 새로운 솔루션을 가격의 차 즉 최적화의 값의 차를 만든다.
+   ? ← cost(S')-cost(S); // S'와 S의 값의 차 계산
 
-   if ? <= 0 then S ← S' // S'의 값이 작으면 즉 차지하는 면적이 작고, 더 효율적으로 배치 되었으면,
-                          // 이것이 현재까지의 최적화가 되고 이것을 온도가 내려간다. Downhill로 표현한다.
+   if ? <= 0 then S ← S' // S'의 값이 작으면 최적화된것, 온도가 내려감
 
-   if ? > 0 then S ← S' // S'의 값이 크면 즉 차지하는 면적이 크고, 더 비 효율적으로 배치 되었으면, 이것을 온도가 올라간다.
-                         //  uphill로 표현한다.
-T ← rT; // 한가지 경우의 수를 처리 했었므로 한 단계 줄어 들게 되면 다음 반복을 진행한다.
-return S    // 프로그램이 마무리 되면 우리가 찾는 최적화의 답을 리턴하고, 정확히 최적화의 답을 찾았으면 이것을 Global Optimization 즉 모든 경우의 수중에서 가장 최적화된 것이다.
+   if ? > 0 then S ← S' // S'의 값이 크면 최적화 x, 온도가 올라감
+
+T ← rT; // 다음 반복 수행
+return S    // 최적화된 해 찾기 완료
 end
 ```
 
+즉, 경우의 수를 높여서 더 안좋은 결과가 나오는 것을 온도의 상승으로 보고, 경우의 수의 조합을 좋게 해서 온도의 하락으로 보고 설명을 하는 것이다.
+
 - 위 순서로 모의 담금질 알고리즘이 진행된다.
+
+gif 이미지 파일로 표현하면 다음과 같다.
+
+<br/>
+
+![모의담금질진행과정](https://upload.wikimedia.org/wikipedia/commons/d/d5/Hill_Climbing_with_Simulated_Annealing.gif)
+
+출처 : wikimedia
+
+# 모의 담금질 알고리즘 적용
+
+### 1. fit 메소드, isNeighborBetter 메소드
+
+```java
+public interface Problem {
+    double fit(double x); // 적합도를 판별하는 fit 메소드
+
+    boolean isNeighborBetter(double f0, double f1); //이웃해, 현재해 비교
+}
+```
+
+### 2. SA구현
