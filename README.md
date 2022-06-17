@@ -81,7 +81,7 @@ _출처 : 8차 인체치수조사 (2020~21), 사이즈코리아_
 
 > 종속변수 : **발 사이즈**
 
-<p align="left"><img src="https://github.com/donggyunhuh/Regression_Algorithm/blob/main/graphFirst.png?raw=true" height="550px" width="950px"></p>
+<p align="left"><img src="https://github.com/donggyunhuh/Regression_Algorithm/blob/main/graphFirst.png?raw=true" height="400px" width="550px"></p>
 <br/>
 
 위 그래프는 엑셀을 이용하여 데이터의 분포를 나타낸 것이다.
@@ -94,7 +94,7 @@ _출처 : 8차 인체치수조사 (2020~21), 사이즈코리아_
 
 엑셀의 회귀 분석 기능으로 위 데이터에 회귀식을 나타내면
 
-<p align="center"><img src="" height="300px" width="500px"></p>
+<p align="center"><img src="https://github.com/donggyunhuh/Regression_Algorithm/blob/main/graphRegr.png?raw=true" height="300px" width="500px"></p>
 <br/>
 
 회귀식은 $$y = 0.1595x - 25.768$$ 으로 구해진다.
