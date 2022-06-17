@@ -326,6 +326,6 @@ _개발 환경 : jdk-17기반 on-line 컴파일러 reple.it 사용, windows 11_
 - 알고리즘에서 구한 $a$ 값은 $0.1506$ 으로 엑셀을 이용하여 구한
   $0.1595$ 와 매우 근접한 결과를 얻어낼 수 있었다.
 
-* 구한 두 회귀식 그래프를 그려서 비교해보자
+* 구한 두 회귀식 그래프를 그려서 비교하면
 
-<p align="center"><img src=""></p>
+<p align="center"><img src="https://github.com/donggyunhuh/Regression_Algorithm/blob/main/graph1and2compare.png?raw=true"></p>
