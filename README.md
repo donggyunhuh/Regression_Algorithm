@@ -317,3 +317,6 @@ public class Main {
 ```
 
 # 알고리즘 수행결과
+
+<p align="center"><img src="" height="300px" width="500px"></p>
+<br/>
