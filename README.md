@@ -66,7 +66,7 @@
 
 이를 정리해보면, 데이터 분포의 추세를 직선 그래프꼴로 나타냈을때, 실제 데이터 값과 회귀값(_평균값_)의 차이를 최소화시킬 수 있는 식이 구하는 회귀식인 것이다.
 
-<p align="center"><img src="https://github.com/donggyunhuh/Regression_Algorithm/blob/main/example%201.jpg?raw=true" height="300px" width="500px"></p>
+<p align="center"><img src="https://github.com/donggyunhuh/Regression_Algorithm/blob/main/Graph/example%201.jpg?raw=true" height="300px" width="500px"></p>
 <br/>
 
 > 실제 데이터 값과 회귀값의 차이를 '_에러값_'이라 정하면, 에러값이 최소가 될때 회귀식은 데이터 분포가 몰린 부분을 지나는 직선의 형태로 나타난다.
@@ -83,7 +83,7 @@ _출처 : 8차 인체치수조사 (2020~21), 사이즈코리아_
 
 > 종속변수 : **발 사이즈**
 
-<p align="center"><img src="https://github.com/donggyunhuh/Regression_Algorithm/blob/main/graphFirst.png?raw=true" height="400px" width="550px"></p>
+<p align="center"><img src="https://github.com/donggyunhuh/Regression_Algorithm/blob/main/Graph/graphFirst.png?raw=true" height="400px" width="550px"></p>
 <br/>
 
 위 그래프는 엑셀을 이용하여 데이터의 분포를 나타낸 것이다.
@@ -96,7 +96,7 @@ _출처 : 8차 인체치수조사 (2020~21), 사이즈코리아_
 
 엑셀의 회귀 분석 기능으로 위 데이터에 회귀식을 나타내면
 
-<p align="center"><img src="https://github.com/donggyunhuh/Regression_Algorithm/blob/main/graphRegr.png?raw=true" height="350px" width="520px"></p>
+<p align="center"><img src="https://github.com/donggyunhuh/Regression_Algorithm/blob/main/Graph/graphRegr.png?raw=true" height="350px" width="520px"></p>
 <br/>
 
 회귀식은 $y = 0.1595x - 25.768$ 으로 구해진다.
@@ -105,7 +105,7 @@ _출처 : 8차 인체치수조사 (2020~21), 사이즈코리아_
 
 아래는 엑셀로 회귀 데이터분석을 실행한 결과이다.
 
-<p align="center"><img src="https://github.com/donggyunhuh/Regression_Algorithm/blob/main/RegressionAnalysis.png?raw=true" height="400px" width="700px"></p>
+<p align="center"><img src="https://github.com/donggyunhuh/Regression_Algorithm/blob/main/Graph/RegressionAnalysis.png?raw=true" height="400px" width="700px"></p>
 
 이 레포트에서는 위 회귀식을 찾아내기 위해 최적화 알고리즘 '**모의 담금질 알고리즘**' 을 사용한다.
 
@@ -127,7 +127,7 @@ _출처 : 8차 인체치수조사 (2020~21), 사이즈코리아_
    즉, 잔차는 위에서 언급한 **_에러값_** 이며 에러값이 최소라는 뜻은 잔차의 합이 가장 적은 경우임을 이용하여 회귀식 $y=ax+b$를 구한다.  
    그러나, 잔차는 항상 양$(+)$의 부호를 가져야 하므로 **잔차의 제곱의 합** 이 최소인 경우를 알고리즘에 적용해야 한다.
 
-    <p align="center"><img src="https://github.com/donggyunhuh/Regression_Algorithm/blob/main/graph2nd.png?raw=true" height="400px" width="550px"></p>
+    <p align="center"><img src="https://github.com/donggyunhuh/Regression_Algorithm/blob/main/Graph/graph2nd.png?raw=true" height="400px" width="550px"></p>
   <br/>
 
 # 모의 담금질 알고리즘(Simulated Annealing, SA)
@@ -318,7 +318,7 @@ public class Main {
 
 # 알고리즘 수행결과
 
-<p align="center"><img src="https://github.com/donggyunhuh/Regression_Algorithm/blob/main/resultFinal.jpg?raw=true" height="300px" width="500px"></p>
+<p align="center"><img src="https://github.com/donggyunhuh/Regression_Algorithm/blob/main/Graph/resultFinal.jpg?raw=true" height="300px" width="500px"></p>
 <br/>
 
 _개발 환경 : jdk-17기반 on-line 컴파일러 reple.it 사용, windows 11_
@@ -328,7 +328,7 @@ _개발 환경 : jdk-17기반 on-line 컴파일러 reple.it 사용, windows 11_
 
 구한 두 회귀식을 그래프를 그려서 비교하면
 
-<p align="center"><img src="https://github.com/donggyunhuh/Regression_Algorithm/blob/main/graph1and2compare.png?raw=true"></p>
+<p align="center"><img src="https://github.com/donggyunhuh/Regression_Algorithm/blob/main/Graph/graph1and2compare.png?raw=true"></p>
 
 - 알고리즘을 이용한 그래프와 엑셀을 이용한 그래프는 아주 비슷한 형태를 가진다.
 
@@ -342,4 +342,4 @@ _개발 환경 : jdk-17기반 on-line 컴파일러 reple.it 사용, windows 11_
 
 측정하여 표로 나타내었다.
 
- <p align="center"><img src="https://github.com/donggyunhuh/Regression_Algorithm/blob/main/errorFrequency.png?raw=true"></p>
+ <p align="center"><img src="https://github.com/donggyunhuh/Regression_Algorithm/blob/main/Graph/errorFrequency.png?raw=true"></p>
